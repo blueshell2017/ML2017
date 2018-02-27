@@ -17,7 +17,9 @@ def index(text):
         else:
             dicts[temp] += 1
     for item,temp in enumerate(myindex):
-        print(temp, " ", item, " ", dicts[temp])
+        with open("A1.txt","a") as f:
+            s = str(temp)+" " + str(item) + " " + str(dicts[temp]) + "\n"
+            f.write(s)
 if __name__ == '__main__':
     text = readtext(r"words.txt")
     index(text)
